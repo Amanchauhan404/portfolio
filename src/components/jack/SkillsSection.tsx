@@ -53,7 +53,7 @@ export function SkillsSection() {
         {SKILLS.map((s, i) => (
           <FadeIn key={s.number} delay={i * 0.1} y={30}>
             <div
-              className="flex items-start gap-6 sm:gap-10 md:gap-14 py-8 sm:py-10 md:py-12"
+              className="flex items-start gap-6 sm:gap-10 md:gap-14 py-8 sm:py-10 md:py-12 group transition-all duration-300 hover:bg-gray-50/50"
               style={{
                 borderTop:
                   i === 0 ? "1px solid rgba(12, 12, 12, 0.15)" : "none",
@@ -61,9 +61,8 @@ export function SkillsSection() {
               }}
             >
               <div
-                className="font-black leading-none shrink-0"
+                className="font-black leading-none shrink-0 transition-all duration-300 bg-clip-text text-transparent bg-[#0C0C0C] group-hover:bg-gradient-to-br group-hover:from-purple-500 group-hover:to-pink-500"
                 style={{
-                  color: "#0C0C0C",
                   fontSize: "clamp(3rem, 10vw, 140px)",
                 }}
               >
