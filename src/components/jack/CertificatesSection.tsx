@@ -13,13 +13,12 @@ const CERTIFICATES = [
     date: "7th May 2026",
     code: "10200252",
     file: certPdf,
-    icon: "/icons/dashboard.png",
+    icon: "/icons/statistics.png",
     skills: ["Data Analysis", "SQL", "Python", "Visualization"],
   },
 ];
 
 export function CertificatesSection() {
-  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
   const [viewingIdx, setViewingIdx] = useState<number | null>(null);
 
   return (
@@ -46,11 +45,7 @@ export function CertificatesSection() {
       <div className="max-w-5xl mx-auto">
         {CERTIFICATES.map((cert, i) => (
           <FadeIn key={cert.number} delay={i * 0.12} y={30}>
-            <div
-              className="group"
-              onMouseEnter={() => setHoveredIdx(i)}
-              onMouseLeave={() => setHoveredIdx(null)}
-            >
+            <div className="group">
               <div
                 className="flex flex-col sm:flex-row items-start gap-6 sm:gap-10 md:gap-14 py-8 sm:py-10 md:py-12"
                 style={{
@@ -63,15 +58,9 @@ export function CertificatesSection() {
               >
                 {/* Number */}
                 <div
-                  className="font-black leading-none shrink-0 transition-all duration-300"
+                  className="font-black leading-none shrink-0 transition-all duration-300 bg-clip-text text-transparent bg-gradient-to-b from-[#646973] to-[#BBCCD7] group-hover:bg-gradient-to-br group-hover:from-purple-500 group-hover:to-pink-500"
                   style={{
                     fontSize: "clamp(3rem, 10vw, 140px)",
-                    background:
-                      hoveredIdx === i
-                        ? "linear-gradient(135deg, #a855f7, #ec4899)"
-                        : "linear-gradient(180deg, #646973 0%, #BBCCD7 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
                   }}
                 >
                   {cert.number}
