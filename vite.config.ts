@@ -26,10 +26,10 @@ export default defineConfig({
           "// noinspection JSUnusedGlobalSymbols",
         ],
       },
-      pages: [{ path: "/" }, { path: "/contact" }],
+      pages: [{ path: "/" }, { path: "/contact" }, { path: "/project" }],
       prerender: {
         enabled: true,
-        routes: ["/", "/contact"],
+        routes: ["/", "/contact", "/project"],
         crawlLinks: false,
       },
     }),
