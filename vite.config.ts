@@ -27,7 +27,10 @@ export default defineConfig({
         ],
       },
       pages: [{ path: "/" }, { path: "/contact" }],
-      prerender: { enabled: true },
+      prerender: {
+        routes: ["/", "/contact"],
+        crawlLinks: false,
+      },
     }),
     viteReact(),
     tailwindcss(),
