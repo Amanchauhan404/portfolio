@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/jack/HeroSection";
 import { MarqueeSection } from "@/components/jack/MarqueeSection";
 import { AboutSection } from "@/components/jack/AboutSection";
 import { SkillsSection } from "@/components/jack/SkillsSection";
+import { CertificatesSection } from "@/components/jack/CertificatesSection";
 import { ProjectsSection } from "@/components/jack/ProjectsSection";
 import { ContactSection } from "@/components/jack/ContactSection";
 import { SectionReveal } from "@/components/jack/SectionReveal";
@@ -42,6 +43,9 @@ function Index() {
       </SectionReveal>
       <SectionReveal>
         <SkillsSection />
+      </SectionReveal>
+      <SectionReveal>
+        <CertificatesSection />
       </SectionReveal>
       {/* No snap on Projects — pinned sticky stack needs free scroll */}
       <SectionReveal snap={false}>
