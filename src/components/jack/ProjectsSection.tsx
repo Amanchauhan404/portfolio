@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import type { MotionValue } from "framer-motion";
 import { FadeIn } from "./FadeIn";
 import { LiveProjectButton } from "./LiveProjectButton";
@@ -114,8 +114,12 @@ function ProjectCard({
     { clamp: true }
   );
 
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { margin: "-40% 0px -40% 0px" });
+
   return (
       <motion.div
+      ref={ref}
       className="absolute inset-0 flex items-center justify-center px-4 sm:px-8 md:px-12 py-10 sm:py-12 md:py-14"
       style={{ y, zIndex: 20 + index }}
     >
@@ -130,7 +134,9 @@ function ProjectCard({
           <div className="flex items-center justify-between gap-4 flex-wrap mb-4 sm:mb-5 md:mb-6">
             <div className="flex items-center gap-4 sm:gap-6 md:gap-8 min-w-0">
               <div
-                className="font-black leading-none shrink-0 transition-all duration-300 bg-clip-text text-transparent bg-gradient-to-b from-[#646973] to-[#BBCCD7] group-hover:bg-gradient-to-br group-hover:from-purple-500 group-hover:to-pink-500"
+                className={`font-black leading-none shrink-0 transition-all duration-300 bg-clip-text text-transparent group-hover:bg-gradient-to-br group-hover:from-purple-500 group-hover:to-pink-500 ${
+                  isInView ? "bg-gradient-to-br from-purple-500 to-pink-500" : "bg-gradient-to-b from-[#646973] to-[#BBCCD7]"
+                }`}
                 style={{ fontSize: "clamp(2rem, 5.5vw, 90px)" }}
               >
                 {project.number}
