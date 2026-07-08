@@ -2,6 +2,9 @@ import { useState } from "react";
 import { FadeIn } from "./FadeIn";
 import { motion, AnimatePresence } from "framer-motion";
 
+// @ts-ignore - Vite will bundle this as a static asset URL
+import certPdf from "../../assets/certificates/data-analyst-101.pdf";
+
 const CERTIFICATES = [
   {
     number: "01",
@@ -9,7 +12,7 @@ const CERTIFICATES = [
     issuer: "Certified Course Completion",
     date: "7th May 2026",
     code: "10200252",
-    file: "/certificates/data-analyst-101.pdf",
+    file: certPdf,
     icon: "/icons/dashboard.png",
     skills: ["Data Analysis", "SQL", "Python", "Visualization"],
   },
