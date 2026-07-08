@@ -28,6 +28,7 @@ export default defineConfig({
       },
       pages: [{ path: "/" }, { path: "/contact" }],
       prerender: {
+        enabled: true,
         routes: ["/", "/contact"],
         crawlLinks: false,
       },
