@@ -120,7 +120,7 @@ function ProjectCard({
       style={{ y, zIndex: 20 + index }}
     >
         <div
-          className="w-full max-w-5xl rounded-[28px] sm:rounded-[38px] md:rounded-[48px] border-2 p-4 sm:p-5 md:p-6 shadow-[0_30px_90px_rgba(0,0,0,0.72)]"
+          className="group w-full max-w-5xl rounded-[28px] sm:rounded-[38px] md:rounded-[48px] border-2 p-4 sm:p-5 md:p-6 shadow-[0_30px_90px_rgba(0,0,0,0.72)] transition-colors duration-500 hover:border-purple-500/50"
           style={{
             backgroundColor: "#0C0C0C",
             borderColor: "#D7E2EA",
@@ -130,7 +130,7 @@ function ProjectCard({
           <div className="flex items-center justify-between gap-4 flex-wrap mb-4 sm:mb-5 md:mb-6">
             <div className="flex items-center gap-4 sm:gap-6 md:gap-8 min-w-0">
               <div
-                className="font-black leading-none shrink-0 hero-heading"
+                className="font-black leading-none shrink-0 transition-all duration-300 bg-clip-text text-transparent bg-gradient-to-b from-[#646973] to-[#BBCCD7] group-hover:bg-gradient-to-br group-hover:from-purple-500 group-hover:to-pink-500"
                 style={{ fontSize: "clamp(2rem, 5.5vw, 90px)" }}
               >
                 {project.number}
